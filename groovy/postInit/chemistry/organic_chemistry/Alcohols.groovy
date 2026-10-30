@@ -89,7 +89,7 @@ DT.recipeBuilder()
     .EUt(VA[LV])
     .buildAndRegister()
 
-    // Ethanol from ethylene
+// Ethanol from ethylene
 
     CHEMICAL_BATH.recipeBuilder()
         .fluidInputs(fluid('phosphoric_acid') * 500)
@@ -106,15 +106,6 @@ DT.recipeBuilder()
         .fluidOutputs(fluid('ethanol') * 50)
         .duration(5)
         .EUt(VA[HV])
-        .buildAndRegister()
-
-    FIXED_BR.recipeBuilder()
-        .fluidInputs(fluid('gtfo_acetaldehyde') * 100)
-        .fluidInputs(fluid('hydrogen') * 100)
-        .notConsumable(ore('catalystBedSupportedPlatinum'))
-        .fluidOutputs(fluid('ethanol') * 100)
-        .duration(5)
-        .EUt(VA[LV])
         .buildAndRegister()
 
 // C3 alcohols
@@ -204,15 +195,6 @@ DT.recipeBuilder()
     BR.recipeBuilder()
         .fluidInputs(fluid('isobutyraldehyde') * 1000)
         .fluidInputs(fluid('hydrogen') * 2000)
-        .notConsumable(metaitem('susy:hv_catalyst_bed_reduction'))
-        .fluidOutputs(fluid('isobutyl_alcohol') * 1000)
-        .EUt(VA[HV])
-        .duration(80)
-        .buildAndRegister()
-
-    BR.recipeBuilder()
-        .fluidInputs(fluid('isobutyraldehyde') * 1000)
-        .fluidInputs(fluid('hydrogen') * 2000)
         .notConsumable(metaitem('catalystBedSupportedPlatinum'))
         .fluidOutputs(fluid('isobutyl_alcohol') * 1000)
         .EUt(VA[HV])
@@ -237,15 +219,6 @@ DISTILLERY.recipeBuilder()
     .fluidOutputs(fluid('valeraldehyde') * 800)
     .EUt(VA[HV])
     .duration(80)
-    .buildAndRegister()
-
-FIXED_BR.recipeBuilder()
-    .fluidInputs(fluid('valeraldehyde') * 50)
-    .fluidInputs(fluid('hydrogen') * 100)
-    .notConsumable(metaitem('susy:hv_catalyst_bed_reduction'))
-    .fluidOutputs(fluid('n_pentanol') * 50)
-    .EUt(VA[HV])
-    .duration(4)
     .buildAndRegister()
 
 FIXED_BR.recipeBuilder()
@@ -343,3 +316,16 @@ DT.recipeBuilder() //SCHULZ FLORY DISTRIBUTION, p = 0.73, ROUNDED TO NEAREST 5s,
     .duration(166)
     .EUt(VA[LV])
     .buildAndRegister()
+
+// Aromatic alcohols
+
+    // Benzyl alcohol
+
+    TBR.recipeBuilder()
+        .notConsumable(ore('dustActivatedRaneyNickel'))
+        .fluidInputs(fluid('benzaldehyde') * 50)
+        .fluidInputs(fluid('hydrogen') * 100)
+        .fluidOutputs(fluid('benzyl_alcohol') * 50)
+        .duration(10)
+        .EUt(VA[MV])
+        .buildAndRegister()

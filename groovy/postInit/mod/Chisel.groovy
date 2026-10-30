@@ -94,7 +94,13 @@ crafting.replaceShaped(item('chisel:waterstone') * 8, [
         [ore('stone'), ore('stone'), ore('stone')],
         [ore('stone'), item('minecraft:water_bucket'), ore('stone')],
         [ore('stone'), ore('stone'), ore('stone')]
-])  
+])
+
+crafting.replaceShaped('chisel:antiblock', item('chisel:antiblock', 15) * 8, [
+    [ore('stone'), ore('stone'), ore('stone')],
+    [ore('stone'), ore('gtLight'), ore('stone')],
+    [ore('stone'), ore('stone'), ore('stone')]
+])
 
 for (def i = 0; i < 16; i++) {
     crafting.removeByOutput(item('chisel:glasspane', i))
@@ -138,3 +144,23 @@ ASSEMBLER.recipeBuilder()
         .duration(20)
         .EUt(VA[ULV])
         .buildAndRegister();
+
+for (def i = 0; i < 16; i++) {
+
+    CUTTER.recipeBuilder()
+        .inputs(item('chisel:glass', i) * 3)
+        .outputs(item('chisel:glasspane', i) * 8)
+        .duration(100)
+        .EUt(7)
+        .buildAndRegister();
+}
+
+for (def i = 0; i < 2; i++) {
+
+    CUTTER.recipeBuilder()
+        .inputs(item('chisel:glass1', i) * 3)
+        .outputs(item('chisel:glasspane1', i) * 8)
+        .duration(100)
+        .EUt(7)
+        .buildAndRegister();
+}

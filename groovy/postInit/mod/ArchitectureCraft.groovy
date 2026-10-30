@@ -25,3 +25,12 @@ crafting.replaceShaped('architecturecraft:item.architecturecraft.hammer4', item(
         [ore('plateIron'), ore('plateIron'), ore('plateIron')],
         [ore('craftingToolFile'), item('minecraft:stick'), ore('craftingToolHardHammer')]
 ])
+
+mods.gregtech.assembler.recipeBuilder()
+    .inputs(ore('plateIron') * 3)
+    .inputs(item('minecraft:stick'))
+    .outputs(item('architecturecraft:hammer'))
+    .circuitMeta(14)
+    .duration(40)
+    .EUt(7)
+    .buildAndRegister()

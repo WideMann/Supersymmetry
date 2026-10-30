@@ -27,12 +27,6 @@ for (item in name_removals) {
     crafting.remove(item)
 }
 
-def oreRod = [
-		'stickSteel',
-		'stickIron',
-		'stickWroughtIron'
-]
-
 crafting.replaceShaped('engineersdecor:independent/clinker_brick_block_recipe', item('engineersdecor:clinker_brick_block') * 2, [
     [ore('ingotBrick'), metaitem('cement.clinker'), ore('ingotBrick')],
     [metaitem('cement.clinker'), ore('ingotBrick'), metaitem('cement.clinker')],
@@ -105,6 +99,12 @@ crafting.replaceShaped('engineersdecor:independent/gas_concrete_stairs_recipe', 
 	[item('engineersdecor:gas_concrete'), item('engineersdecor:gas_concrete'), item('engineersdecor:gas_concrete')]
 ])
 
+crafting.addShaped('engineersdecor:block_placer', item('engineersdecor:factory_placer') * 1, [
+	[metaitem('plateSteel'), metaitem('plateTreatedWood'), metaitem('plateSteel')],
+	[ore('circuitLv'), metaitem('electric.piston.mv'), metaitem('platePlastic')],
+	[metaitem('plateSteel'), metaitem('plateTreatedWood'), metaitem('plateSteel')]
+])
+
 // Stairs rework
 
 def stair_materials = [
@@ -163,25 +163,4 @@ mods.gregtech.cutter.recipeBuilder()
 		.outputs(item('engineersdecor:halfslab_gas_concrete') * 4)
 		.duration(25)
 		.EUt(VA[ULV])
-		.buildAndRegister();
-
-for (name in oreRod) {
-	mods.gregtech.assembler.recipeBuilder()
-			.circuitMeta(2)
-			.fluidInputs(fluid('concrete') * 144)
-			.inputs(ore('dustPolypropylene'))
-			.inputs(ore(name) * 4)
-			.outputs(item('engineersdecor:rebar_concrete') * 2)
-			.duration(40)
-			.EUt(VA[MV])
-			.buildAndRegister();
-}
-
-mods.gregtech.autoclave.recipeBuilder()
-		.fluidInputs(fluid('concrete') * 144)
-		.inputs(ore('dustQuartzite'))
-		.inputs(ore('dustTinyAluminium'))
-		.outputs(item('engineersdecor:gas_concrete') * 8)
-		.duration(80)
-		.EUt(VA[MV])
 		.buildAndRegister();

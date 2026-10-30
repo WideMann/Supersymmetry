@@ -21,7 +21,7 @@ def polymers = [
         new ExtrudablePolymers('EpoxyCresolNovolacs', 120, 8, true, false, false, false, false),
 
         new ExtrudablePolymers('Polycarbonate', 480, 8, false, false, false, false, false),
-        new ExtrudablePolymers('Polytetrafluoroethylene', 480, 8, true, true, true, false, false),
+        new ExtrudablePolymers('Polytetrafluoroethylene', 480, 8, true, true, true, false, true),
         new ExtrudablePolymers('PolyethyleneTerephthalate', 480, 8, true, false, false, false, false),
         new ExtrudablePolymers('EthyleneVinylAcetate', 480, 8, false, true, true, false, false),
         new ExtrudablePolymers('SiliconeRubber', 480, 8, true, false, false, true, false),
@@ -34,7 +34,7 @@ def polymers = [
         new ExtrudablePolymers('PolyvinylideneFluoride', 1920, 8, true, false, false, false, false),
         new ExtrudablePolymers('Ultem', 1920, 8, false, false, false, false, false),
         new ExtrudablePolymers('Epoxy', 1920, 8, false, false, false, false, false),
-        new ExtrudablePolymers('Pmma', 1920, 8, true, false, false, false, false),
+        new ExtrudablePolymers('PolymethylMethacrylate', 1920, 8, true, false, false, false, false),
         new ExtrudablePolymers('Polysulfone', 1920, 8, true, false, false, false, true),
         new ExtrudablePolymers('Viton', 1920, 8, false, false, false, true, false),
 
